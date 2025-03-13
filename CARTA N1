@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int carta = 1;
+    char* codico = "A";
+    char* estado = "São Paulo"; // Declarar como string (ponteiro char)
+    char* cidade_nome = "São Paulo"; // Declarar como string (ponteiro char)
+    long populacao = 23658461; // Use long para grandes números populacionais
+    double area = 6987.65;
+    double pib = 700.56; // PIB em bilhões de reais
+    int numeros_de_pontos_turisticos = 160; // Corrigido o nome da variável e adicionado ponto e vírgula
+
+    // Printing the values to check the result
+    printf("Carta: %d\n", carta);
+    printf("Estado: %s\n", estado);
+    printf("Cidade: %s\n", cidade_nome);
+    printf("População: %ld\n", populacao);
+    printf("Área: %.2f\n", area);
+    printf("PIB: %.2f bilhões de reais\n", pib);
+    printf("Número de pontos turísticos: %d\n", numeros_de_pontos_turisticos); // Adicionando a impressão dos pontos turísticos
+
+    return 0;
+}
