@@ -1,0 +1,64 @@
+#include <stdio.h>
+
+struct Cidade {
+    int carta;
+    const char* codigo;
+    const char* estado;
+    const char* cidade_nome;
+    long populacao;
+    double area;
+    double pib;
+    int numero_de_pontos_turisticos;
+};
+
+int main() {
+    struct Cidade cidades[2] = {
+        {1, "A", "São Paulo", "São Paulo", 23658461, 6987.65, 700.56, 140},
+        {2, "B", "maceio", "alagoas", 96248723, 7255.99, 8593.56, 145}
+    };
+
+    // Exibir informações das cidades
+    for (int i = 0; i < 2; i++) {
+        printf("Carta: %d\n", cidades[i].carta);
+        printf("Código: %s\n", cidades[i].codigo);
+        printf("Estado: %s\n", cidades[i].estado);
+        printf("Cidade: %s\n", cidades[i].cidade_nome);
+        printf("População: %ld\n", cidades[i].populacao);
+        printf("Área: %.2f km²\n", cidades[i].area);
+        printf("PIB: %.2f bilhões de reais\n", cidades[i].pib);
+        printf("Número de pontos turísticos: %d\n", cidades[i].numero_de_pontos_turisticos);
+        printf("------------------------------\n");
+    }
+
+    // Comparação entre São Paulo e alagoas
+    struct Cidade sp = cidades[0];
+    struct Cidade alagoas = cidades[1];
+
+    printf("Comparação entre São Paulo e alagoas:\n");
+
+    // Comparar população
+    if (alagoas.populacao > sp.populacao)
+        printf("- alagoas venceu população.\n");
+    else
+        printf("- São Paulo venceu população.\n");
+
+    // Comparar área
+    if (alagoas.area > sp.area)
+        printf("- alagoas venceu área territorial.\n");
+    else
+        printf("- São Paulo venceu área territorial.\n");
+
+    // Comparar PIB
+    if (alagoas.pib > sp.pib)
+        printf("- alagoas venceu PIB.\n");
+    else
+        printf("- São Paulo venceu PIB.\n");
+
+    // Comparar número de pontos turísticos
+    if (alagoas.numero_de_pontos_turisticos > sp.numero_de_pontos_turisticos)
+        printf("- alagoas venceu pontos turísticos.\n");
+    else
+        printf("- São Paulo venceu pontos turísticos.\n");
+
+    return 0;
+}

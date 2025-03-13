@@ -1,0 +1,64 @@
+#include <stdio.h>
+
+struct Cidade {
+    int carta;
+    const char* codigo;
+    const char* estado;
+    const char* cidade_nome;
+    long populacao;
+    double area;
+    double pib;
+    int numero_de_pontos_turisticos;
+};
+
+int main() {
+    struct Cidade cidades[2] = {
+        {1, "A", "Rio Grande do Sul", "Porto Alegre", 1488252, 497.0, 78.71, 140},
+        {2, "B", "Bahia", "Salvador", 2900319, 693.8, 85.93, 145}
+    };
+
+    // Exibir informações das cidades
+    for (int i = 0; i < 2; i++) {
+        printf("Carta: %d\n", cidades[i].carta);
+        printf("Código: %s\n", cidades[i].codigo);
+        printf("Estado: %s\n", cidades[i].estado);
+        printf("Cidade: %s\n", cidades[i].cidade_nome);
+        printf("População: %ld\n", cidades[i].populacao);
+        printf("Área: %.2f km²\n", cidades[i].area);
+        printf("PIB: %.2f bilhões de reais\n", cidades[i].pib);
+        printf("Número de pontos turísticos: %d\n", cidades[i].numero_de_pontos_turisticos);
+        printf("------------------------------\n");
+    }
+
+    // Comparação entre Porto Alegre e Salvador
+    struct Cidade porto_alegre = cidades[0];
+    struct Cidade salvador = cidades[1];
+
+    printf("Comparação entre Porto Alegre e Salvador:\n");
+
+    // Comparar população
+    if (salvador.populacao > porto_alegre.populacao)
+        printf("- Salvador venceu população.\n");
+    else
+        printf("- Porto Alegre venceu população.\n");
+
+    // Comparar área
+    if (salvador.area > porto_alegre.area)
+        printf("- Salvador venceu área territorial.\n");
+    else
+        printf("- Porto Alegre venceu área territorial.\n");
+
+    // Comparar PIB
+    if (salvador.pib > porto_alegre.pib)
+        printf("- Salvador venceu PIB.\n");
+    else
+        printf("- Porto Alegre venceu PIB.\n");
+
+    // Comparar número de pontos turísticos
+    if (salvador.numero_de_pontos_turisticos > porto_alegre.numero_de_pontos_turisticos)
+        printf("- Salvador venceu pontos turísticos.\n");
+    else
+        printf("- Porto Alegre venceu pontos turísticos.\n");
+
+    return 0;
+}
